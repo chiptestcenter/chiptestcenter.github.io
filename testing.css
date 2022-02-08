@@ -1,0 +1,17 @@
+.block {
+    display: block;
+    width: 100%;
+    border: none;
+    background-color: #d81010;
+    padding: 14px 28px;
+    font-size: 24px;
+    height: 7rem;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 7rem;
+}
+
+#tap {
+    margin: 1rem;
+}
+
