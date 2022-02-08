@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Button Click</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  </head>
+  <body>
+      <input type="textarea" placeholder="Date/Time Export" id="textVal">
+      <input type="submit" value="Tap me!" id="submit">
+
+      <div>
+        <ol class="listItems"></ol>
+      </div>
+
+      <script>
+          $('#submit').on('click', function(e) {
+            var $textVal = $('#textVal').val();
+            var $listItems = $('.listItems');
+            var timeAdded = new Date;
+
+            currentHours = timeAdded.getHours();
+            currentHours = ("0" + currentHours).slice(-2);
+            currentMinutes = timeAdded.getMinutes();
+            currentMinutes = ("0" + currentMinutes).slice(-2);
+            currentSeconds = timeAdded.getSeconds();
+            currentSeconds = ("0" + currentSeconds).slice(-2);
+            currentMilliseconds = timeAdded.getMilliseconds();
+            currentMilliseconds = ("00" + currentMilliseconds).slice(-3);
+
+            $listItems.prepend('<li>' + $textVal + ' Tap at ' + (timeAdded.getDay() + '-'+ (timeAdded.getMonth() + 1) + '-' + timeAdded.getFullYear() + " " + currentHours + ":" + currentMinutes + ":" + currentSeconds + " " + currentMilliseconds + "ms"  ) + '</li>');
+
+            $('#textVal').val(' ');
+            });
+      </script>
+  </body>
+</html>
