@@ -8,10 +8,9 @@
     height: 7rem;
     cursor: pointer;
     text-align: center;
-    border-radius: 7rem;
 }
 
-#tap {
+.tap {
     margin: 1rem;
 }
 

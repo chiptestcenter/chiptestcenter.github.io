@@ -31,8 +31,11 @@
         </div>
     </nav>
 
-    <input type="textarea" placeholder="Date/Time Export" id="textVal" style="visibility: hidden;">
-    <div id="tap">
+    <input type="textarea" placeholder="Date/Time Export" id="textVal" style="visibility: hidden; display: none;">
+    <div class="tap">
+        <input class="form-control me-2" type="text" placeholder="Tapster Delay in ms" id="userinput" style="border-radius: 7rem;">
+    </div>
+    <div class="tap">
         <input type="submit" class="btn btn-danger block" value="Tap me!" id="submit">
     </div>
 
@@ -41,6 +44,7 @@
     </div>
 
     <script>
+
         $('#submit').on('click', function(e) {
             var $textVal = $('#textVal').val();
             var $listItems = $('.listItems');
@@ -54,11 +58,18 @@
             currentSeconds = ("0" + currentSeconds).slice(-2);
             currentMilliseconds = timeAdded.getMilliseconds();
             currentMilliseconds = ("00" + currentMilliseconds).slice(-3);
+            oldMilliseconds = currentMilliseconds;
+            
+            
+            
 
             $listItems.prepend('<li>' + $textVal + ' Tap at ' + (timeAdded.getDay() + '-'+ (timeAdded.getMonth() + 1) + '-' + timeAdded.getFullYear() + " " + currentHours + ":" + currentMinutes + ":" + currentSeconds + " " + currentMilliseconds + "ms"  ) + '</li>');
 
+            
+
             $('#textVal').val(' ');
             });
+            
     </script>
   </body>
 </html>
